@@ -1,19 +1,20 @@
-```
-NAMESPACE=default
-
-helm repo add bitnami https://charts.bitnami.com/bitnami
-helm install emoji bitnami/postgresql --set global.postgresql.auth.postgresPassword=password \
-  --set global.postgresql.auth.database=emoji -n $NAMESPACE
-
-kubectl create secret generic db-binding-compatible --from-literal=type=postgresql --from-literal=provider=bitnami \
- --from-literal=jdbc-url=jdbc:postgresql://emoji-postgresql.${NAMESPACE}.svc.cluster.local:5432/emoji \
- --from-literal=password=password --from-literal=username=postgres -n $NAMESPACE
- 
- tanzu service claim create db-binding-compatible \
-  --resource-name db-binding-compatible \
-  --resource-kind Secret \
-  --resource-api-version v1
- 
- kubectl apply -f config/workload.yaml -n $NAMESPACE
-```
 # TPK-app-inclusion
+
+Init the app
+tanzu app init
+
+Configure the app to use Java17 (Spring Boot v3)
+export ZAPP=inclusion
+tanzu app config build non-secret-env set --app=$ZAPP BP_JVM_VERSION=17
+
+Add yaml file to expose the app with a http route
+cp yaml/httproute_inclusion.yaml .tanzu/config
+
+Deploy the app (make sure we are targeting the right project and space before)
+tanzu project use
+tanzu space use
+tanzu deploy -y
+
+
+
+
