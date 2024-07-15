@@ -3,11 +3,16 @@
 ## Get the SpringBoot app on the local workstation
 git clone https://github.com/JulienNagel2/TPK-app-inclusion
 
-## Verify the SpringBoot app is working fine locally
+## Verify the SpringBoot app is working fine locally 
+Example with maven, beware you must use JVM v17+ since the app is using SpringBoot v3
+```
 mvn spring-boot:run
+```
 
 ## Init the app for Tanzu Platform
+```
 tanzu app init
+```
 
 ## Configure the app for Tanzu Platform
 Configure to use Java17 (needed for Spring Boot v3)
