@@ -16,7 +16,7 @@ mvn spring-boot:run
 ## Init the app for Tanzu Platform
 We give a name to the app. We want to use buildpacks to build the app.
 ```
-export ZAPPNAME=user1-inclusionapp
+export ZAPPNAME=inclusionapp
 tanzu app init $ZAPPNAME --build-path . --build-type buildpacks
 ```
 
