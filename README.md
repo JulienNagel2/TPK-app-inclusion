@@ -1,7 +1,11 @@
 # TPK-app-inclusion
 
 ## Get the SpringBoot app on the local workstation
+go to your favorite workdir and clone the repo from github (that creates a dir called 'TPK-app-inclusion')
+```
 git clone https://github.com/JulienNagel2/TPK-app-inclusion
+cd TPK-app-inclusion
+```
 
 ## Verify the SpringBoot app is working fine locally 
 Example with maven, beware you must use Java v17+ since the app is using SpringBoot v3
@@ -12,7 +16,7 @@ mvn spring-boot:run
 ## Init the app for Tanzu Platform
 We give a name to the app. We want to use buildpacks to build the app.
 ```
-export ZAPPNAME=myapp
+export ZAPPNAME=inclusionapp1
 tanzu app init $ZAPPNAME --build-path . --build-type buildpacks
 ```
 
