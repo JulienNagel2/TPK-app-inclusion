@@ -1,5 +1,8 @@
 # TPK-app-inclusion
 
+## Get the SpringBoot app on the local workstation
+git clone https://github.com/JulienNagel2/TPK-app-inclusion
+
 ## Verify the SpringBoot app is working fine locally
 mvn spring-boot:run
 
