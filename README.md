@@ -4,30 +4,31 @@
 git clone https://github.com/JulienNagel2/TPK-app-inclusion
 
 ## Verify the SpringBoot app is working fine locally 
-Example with maven, beware you must use JVM v17+ since the app is using SpringBoot v3
+Example with maven, beware you must use Java v17+ since the app is using SpringBoot v3
 ```
 mvn spring-boot:run
 ```
 
 ## Init the app for Tanzu Platform
+We give a name to the app. We want to use buildpacks to build the app.
 ```
-tanzu app init
-```
-
-## Configure the app for Tanzu Platform
-Configure to use Java17 (needed for Spring Boot v3)
-```
-export ZAPP=inclusion
-tanzu app config build non-secret-env set --app=$ZAPP BP_JVM_VERSION=17
+export ZAPPNAME=myapp
+tanzu app init $ZAPPNAME --build-path . --build-type buildpacks
 ```
 
-## Add a yaml file to expose the app with a http route
+## Configure the app $ZAPPNAME for Tanzu Platform
+Configure the buildpacks to use Java v17 (needed for Spring Boot v3)
+```
+tanzu app config build non-secret-env set --app=$ZAPPNAME BP_JVM_VERSION=17
+```
+
+## Add a yaml file to expose the app (using a http route definition)
 ```
 cp yaml/httproute_inclusion.yaml .tanzu/config
 ```
 
 ## Deploy the app through the Tanzu Platform
-First, make sure we are targeting the right project and space, and then go!
+First, make sure we are targeting the right project and space in the Tanzu Platform, and then go!
 ```
 tanzu project use
 tanzu space use
