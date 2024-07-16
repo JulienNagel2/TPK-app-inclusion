@@ -21,7 +21,7 @@ tanzu app init $ZAPPNAME --build-path . --build-type buildpacks
 ```
 
 ## Configure the app for Tanzu Platform
-Configure the buildpacks to use Java v17 (needed for Spring Boot v3)
+Configure the buildpack to use Java v17 (needed for Spring Boot v3)
 ```
 tanzu app config build non-secret-env set --app=$ZAPPNAME BP_JVM_VERSION=17
 ```
