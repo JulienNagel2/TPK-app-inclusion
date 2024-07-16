@@ -20,7 +20,7 @@ export ZAPPNAME=inclusionapp
 tanzu app init $ZAPPNAME --build-path . --build-type buildpacks
 ```
 
-## Configure the app $ZAPPNAME for Tanzu Platform
+## Configure the app for Tanzu Platform
 Configure the buildpacks to use Java v17 (needed for Spring Boot v3)
 ```
 tanzu app config build non-secret-env set --app=$ZAPPNAME BP_JVM_VERSION=17
@@ -33,8 +33,8 @@ cp yaml/httproute.yaml .tanzu/config
 sed -i "s/ZPLACEHOLDER/${ZAPPNAME}/g" .tanzu/config/httproute.yaml
 ```
 
-## Define the container registry where the application package will be pushed after the build
-We need to have container registry available to store the app package once it is built. Example below
+## Define the container registry for the application package
+We need to have a container registry to store the app package once it is built. Example below
 ```
 export ZREGISTRYSTRING=<YOUR REGISTRY>/<YOUR DIR>/{name}
 tanzu build config --containerapp-registry ${ZREGISTRYSTRING}
