@@ -47,7 +47,7 @@ docker login ${ZREGISTRYSTRING}
 ```
 
 ## Deploy the app 
-Login and make sure we are targeting the right project (YOURPROJECT) and space (YOURSPACE) in the Tanzu Platform
+Login and target the right project (YOURPROJECT) and space (YOURSPACE). Then deploy
 ```
 tanzu login
 tanzu project use YOURPROJECT
