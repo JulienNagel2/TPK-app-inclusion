@@ -7,7 +7,7 @@ git clone https://github.com/JulienNagel2/TPK-app-inclusion
 cd TPK-app-inclusion
 ```
 
-## Verify the SpringBoot app is working fine locally 
+## Verify the app is working fine locally 
 Example with maven, beware you must use Java v17+ since the app is using SpringBoot v3
 ```
 mvn spring-boot:run
