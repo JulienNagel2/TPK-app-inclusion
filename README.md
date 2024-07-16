@@ -30,6 +30,7 @@ tanzu app config build non-secret-env set --app=$ZAPPNAME BP_JVM_VERSION=17
 Here we are using an http route definition
 ```
 cp yaml/httproute_inclusion.yaml .tanzu/config
+sed -i 's/ZPLACEHOLDER/${ZAPPNAME}/g' .tanzu/config/httproute_inclusion.yaml
 ```
 
 ## Define the container registry where the application package will be pushed after the build
@@ -40,13 +41,16 @@ tanzu build config --containerapp-registry ${ZREGISTRYSTRING}
 ```
 
 ## Docker login to your container registry 
-This step is necessary so that the tanzu CLI can store the app package during the deploy process
+Docker login so that the tanzu CLI can connect to the container registry and store the app package after build 
 ```
 docker login ${ZREGISTRYSTRING}
 ```
 
 ## Deploy the app through the Tanzu Platform (does the build automatically)
-First, make sure we are targeting the right project (YOURPROJECT) and space (YOURSPACE) in the Tanzu Platform, and then go!
+Prereq: A project, space, availability target must be configured in Tanzu Platform to host your app
+First, login and make sure we are targeting the right project (YOURPROJECT) and space (YOURSPACE) in the Tanzu Platform
+The tanzu deploy includes a build phase that saves the app package to the container registry
+And then the actual app deployment to the K8s cluster(s) occurs
 ```
 tanzu login
 tanzu project use YOURPROJECT
