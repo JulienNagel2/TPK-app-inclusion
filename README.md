@@ -8,7 +8,7 @@ cd TPK-app-inclusion
 ```
 
 ## Verify the app is working fine locally 
-Example with maven, beware you must use Java v17+ since the app is using SpringBoot v3
+Example with maven, beware you must use Java v17+ since the app is using Spring Boot v3
 ```
 mvn spring-boot:run
 ```
