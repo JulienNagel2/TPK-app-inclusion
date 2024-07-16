@@ -34,9 +34,9 @@ cp yaml/httproute.yaml .tanzu/config
 Adapt the file to point to the right service name (depends on app name)
 ```
 # on linux:
-sed -i "s/ZPLACEHOLDER/${ZAPPNAME}/g" .tanzu/config/httproute.yaml
+sed -i "s/ZPLACEHOLDER/${ZAPPNAME}/g" '.tanzu/config/httproute.yaml'
 # on MacOS:
-sed -i "s/ZPLACEHOLDER/${ZAPPNAME}/g" .tanzu/config/httproute.yaml
+sed -i '' "s/ZPLACEHOLDER/${ZAPPNAME}/g" '.tanzu/config/httproute.yaml'
 ```
 
 ## Define the container registry for the application package
