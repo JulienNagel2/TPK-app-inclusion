@@ -30,7 +30,7 @@ tanzu app config build non-secret-env set --app=$ZAPPNAME BP_JVM_VERSION=17
 Here we are using an http route definition
 ```
 cp yaml/httproute_inclusion.yaml .tanzu/config
-sed -i 's/ZPLACEHOLDER/${ZAPPNAME}/g' .tanzu/config/httproute_inclusion.yaml
+sed -i "s/ZPLACEHOLDER/${ZAPPNAME}/g" .tanzu/config/httproute.yaml
 ```
 
 ## Define the container registry where the application package will be pushed after the build
