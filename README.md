@@ -47,10 +47,7 @@ docker login ${ZREGISTRYSTRING}
 ```
 
 ## Deploy the app 
-Prereq: A project, space, availability target must be configured in Tanzu Platform to host your app
-First, login and make sure we are targeting the right project (YOURPROJECT) and space (YOURSPACE) in the Tanzu Platform
-The tanzu deploy includes a build phase that saves the app package to the container registry
-And then the actual app deployment to the K8s cluster(s) occurs
+Login and make sure we are targeting the right project (YOURPROJECT) and space (YOURSPACE) in the Tanzu Platform
 ```
 tanzu login
 tanzu project use YOURPROJECT
