@@ -26,8 +26,8 @@ Configure the buildpack to use Java v17 (needed for Spring Boot v3)
 tanzu app config build non-secret-env set --app=$ZAPPNAME BP_JVM_VERSION=17
 ```
 
-## Add a yaml file to expose the app through the Tanzu Platform 
-Here we are using an http route definition and we adapt it to point to the right service name (app name)
+## Add a HTTProute definition to expose the app  
+The http route definition is adapted to point to the right service name (depends on app name)
 ```
 cp yaml/httproute.yaml .tanzu/config
 sed -i "s/ZPLACEHOLDER/${ZAPPNAME}/g" .tanzu/config/httproute.yaml
