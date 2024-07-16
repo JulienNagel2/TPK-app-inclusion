@@ -46,7 +46,7 @@ Docker login so that the tanzu CLI can connect to the container registry and sto
 docker login ${ZREGISTRYSTRING}
 ```
 
-## Deploy the app through the Tanzu Platform (does the build automatically)
+## Deploy the app 
 Prereq: A project, space, availability target must be configured in Tanzu Platform to host your app
 First, login and make sure we are targeting the right project (YOURPROJECT) and space (YOURSPACE) in the Tanzu Platform
 The tanzu deploy includes a build phase that saves the app package to the container registry
