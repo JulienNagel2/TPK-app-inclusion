@@ -61,5 +61,10 @@ tanzu space use YOURSPACE
 tanzu deploy -y
 ```
 
-
+## Check the app status with tanzu CLI
+How is the app going?
+```
+tanzu app list
+tanzu app get ${ZAPPNAME}
+```
 
