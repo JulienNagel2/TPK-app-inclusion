@@ -1,4 +1,5 @@
 # TPK-app-inclusion
+Procedure to deploy a simple Spring Boot app with Tanzu Platform
 
 ## Prereqs for Tanzu Platform
 To deploy the app to Tanzu platform you need to:
