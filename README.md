@@ -1,5 +1,16 @@
 # TPK-app-inclusion
 
+## Prereqs for Tanzu Platform
+To deploy the app to Tanzu platform you need to:
+```
+Have access to a Tanzu Platform Org/Project/Space
+Have installed and configured the tanzu CLI on your workstation:
+  - Install tanzu CLI v1.3.0 or above on the workstation
+    https://docs.vmware.com/en/VMware-Tanzu-CLI/1.3/tanzu-cli/index.html
+  - Install the tanzu CLI plugins for Platform Engineer
+    tanzu plugin install --group vmware-tanzu/platform-engineer
+```
+
 ## Get the app on the local workstation
 go to your favorite workdir and clone the repo from github (that creates a dir called 'TPK-app-inclusion')
 ```
