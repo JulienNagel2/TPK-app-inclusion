@@ -61,7 +61,7 @@ tanzu space use YOURSPACE
 tanzu deploy -y
 ```
 
-## Check the app status with tanzu CLI
+## Check the app status
 How is the app going?
 ```
 tanzu app list
