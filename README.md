@@ -12,7 +12,7 @@ Have installed and configured the tanzu CLI on your workstation:
     tanzu plugin install --group vmware-tanzu/platform-engineer
 ```
 
-## Get the app on the local workstation
+## Get the app on your workstation
 go to your favorite workdir and clone the repo from github (that creates a dir called 'TPK-app-inclusion')
 ```
 git clone https://github.com/JulienNagel2/TPK-app-inclusion
