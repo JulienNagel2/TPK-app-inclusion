@@ -8,6 +8,8 @@ target/
 tanzu.yml
 .tanzu
 zz
+zbuild
+zlog.log
 
 ### STS ###
 .apt_generated

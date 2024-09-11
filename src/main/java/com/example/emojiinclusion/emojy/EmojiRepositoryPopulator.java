@@ -16,7 +16,7 @@ public class EmojiRepositoryPopulator implements ApplicationListener<Application
     @Override
     public void onApplicationEvent(ApplicationReadyEvent event) 
     {
-        int nbrEmojis = 1;
+        int nbrEmojis = 3; // how many Musketeers do you need?
         for (int i=0;i<nbrEmojis;i++)
         {
             this.emojiRepository.save(Emoji.random());

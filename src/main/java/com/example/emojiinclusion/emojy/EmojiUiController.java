@@ -29,9 +29,9 @@ public class EmojiUiController {
         logIt("***INFO*** EmojiUiController.fetchUI() dataSourceUrlSubstring = " + dataSourceUrlSubstring);
         String networkInfo = getHostInfo();
         logIt("***INFO*** EmojiUiController.fetchUI() networkInfo = " + networkInfo);
-        String databaseInfo = dataSourceUrlSubstring.substring(0, dataSourceUrlSubstring.indexOf(":")).toUpperCase();
-        String msg = "Hello! Time is: " + getTS() + "<br>";
-        msg = msg + "The app is running on this host: " + networkInfo + "<br>";
+        //String databaseInfo = dataSourceUrlSubstring.substring(0, dataSourceUrlSubstring.indexOf(":")).toUpperCase();
+        String msg = "Welcome! Time is: " + getTS() + "<br><br>";
+        msg = msg + "The app is running on this host: " + networkInfo + "<br><br>";
         msg = msg + "The app is connected to this DB: " + dataSourceUrlSubstring;
         model.addAttribute("database", msg);
         return "index";
